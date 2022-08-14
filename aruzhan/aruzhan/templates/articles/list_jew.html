@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Последние продукты {% endblock %}
+
+{% block content %}
+
+    {% if latest_products_l %}
+
+        {% for a in latest_products_l %}
+            <a href="{% url 'articles:detail' a.id %}"> {{a.article_title}}</a>
+        {% endfor %}
+    {% else %}
+        Желаемый вами продукт не найден
+    {% endif %}
+
+
+
+{% endblock %}
